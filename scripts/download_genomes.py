@@ -29,5 +29,7 @@ if __name__ == '__main__':
         from sys import stdout as out_f
     elif args.output.suffix.lower() == '.gz':
         out_f = gopen(args.output, mode='wt')
+    else:
+        out_f = open(args.output, mode='wt')
     out_f.write(seqs)
     out_f.close()
